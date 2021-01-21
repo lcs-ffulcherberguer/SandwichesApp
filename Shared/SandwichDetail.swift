@@ -28,6 +28,7 @@ struct SandwichDetail: View {
             
             Spacer(minLength: 0)
             
+            if sandwich.isSpicy && !zoomed {
             HStack {
                 Spacer()
                 Label("Spicy", systemImage: "flame.fill")
@@ -40,6 +41,8 @@ struct SandwichDetail: View {
             .background(Color.red)
             .foregroundColor(.yellow)
             
+          }
+        
         }
         
         .navigationTitle(sandwich.name)
@@ -53,8 +56,13 @@ struct SandwichDetail: View {
 
 struct SandwichDetail_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-        SandwichDetail(sandwich: testData[0])
+        Group {
+            NavigationView{
+            SandwichDetail(sandwich: testData[1])
+            }
+            NavigationView{
+                SandwichDetail(sandwich: testData[0])
+            }
         }
     }
 }
