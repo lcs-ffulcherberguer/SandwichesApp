@@ -15,11 +15,14 @@ struct SandwichDetail: View {
         Image(sandwich.imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .navigationTitle(sandwich.name)
     }
 }
 
 struct SandwichDetail_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView{
         SandwichDetail(sandwich: testData[0])
+        }
     }
 }

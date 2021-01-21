@@ -50,7 +50,7 @@ struct SandwichCell: View {
     var sandwich: Sandwich
     
     var body: some View {
-        NavigationLink(destination: Text(sandwich.name)) {
+        NavigationLink(destination: SandwichDetail(sandwich: sandwich)) {
             Image(sandwich.thumbnailName)
                 .cornerRadius(8)
             
