@@ -36,8 +36,9 @@ struct SandwichDetail: View {
             }
             
             .padding(.all)
-            .font(.headline)
+            .font(Font.headline.smallCaps())
             .background(Color.red)
+            .foregroundColor(.yellow)
             
         }
         
