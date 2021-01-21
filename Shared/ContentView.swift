@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    var sandwiches: [Sandwich] = []
-    
+    @ObservedObject var store: SandwichStore
     
     var body: some View {
         NavigationView{
             List {
-               ForEach(sandwiches) { sandwich in
+                ForEach(store.sandwiches) { sandwich in
                SandwichCell(sandwich: sandwich)
                 
                 
@@ -23,7 +22,7 @@ struct ContentView: View {
                 HStack {
                     //Make it centered
                     Spacer()
-                    Text("\(sandwiches.count) Sandwiches")
+                    Text("\(store.sandwiches.count) Sandwiches")
                         .foregroundColor(.secondary)
                     Spacer()
                     
@@ -45,7 +44,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(sandwiches: testData)
+        ContentView(store: testStore)
     }
 }
 

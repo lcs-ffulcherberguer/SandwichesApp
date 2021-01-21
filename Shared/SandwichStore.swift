@@ -7,8 +7,8 @@
 
 import Foundation
 
-class SandwichStore {
-    var sandwiches: [Sandwich]
+class SandwichStore: ObservableObject {
+    @Published var sandwiches: [Sandwich]
 
     init(sandwiches: [Sandwich] = []) {
         self.sandwiches = sandwiches
