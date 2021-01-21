@@ -17,8 +17,10 @@ struct SandwichDetail: View {
             .resizable()
             .aspectRatio(contentMode: zoomed ? .fill : .fit)
             .onTapGesture {
+                withAnimation{
                 zoomed.toggle()
-                
+                    
+                }
             }
             
             .navigationTitle(sandwich.name)
