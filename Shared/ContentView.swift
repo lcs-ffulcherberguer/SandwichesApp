@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         List(sandwiches) { sandwich in
             Image(sandwich.thumbnailName)
-            
+                .cornerRadius(8)
             
           
             VStack(alignment: .leading) {
@@ -20,12 +20,13 @@ struct ContentView: View {
                 Text("\(sandwich.ingredientCount)ingredients")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                        
+                    
                         
                         
             }
-            .frame(width: 0.0)
-            }
+          
+        }
+        
         }
             
     }
