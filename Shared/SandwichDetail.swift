@@ -13,18 +13,31 @@ struct SandwichDetail: View {
     
     
     var body: some View {
-        Image(sandwich.imageName)
-            .resizable()
-            .aspectRatio(contentMode: zoomed ? .fill : .fit)
-            .onTapGesture {
-                withAnimation{
-                zoomed.toggle()
-                    
-                }
-            }
+        VStack {
+            Spacer(minLength: 0)
             
-            .navigationTitle(sandwich.name)
-            .edgesIgnoringSafeArea(.bottom)
+            Image(sandwich.imageName)
+                .resizable()
+                .aspectRatio(contentMode: zoomed ? .fill : .fit)
+                .onTapGesture {
+                    withAnimation{
+                    zoomed.toggle()
+                        
+                    }
+                }
+            
+            Spacer(minLength: 0)
+            
+            Label("Spicy", systemImage: "flame.fill")
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            
+            
+        }
+        
+        .navigationTitle(sandwich.name)
+        .edgesIgnoringSafeArea(.bottom)
+        
     }
 }
 
