@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var sandwiches: [Sandwich] = []
     var body: some View {
+        NavigationView{
         List(sandwiches) { sandwich in
+            NavigationLink(destination: Text(sandwich.name)) {
             Image(sandwich.thumbnailName)
                 .cornerRadius(8)
             
@@ -23,13 +25,17 @@ struct ContentView: View {
                     
                         
                         
-            }
-          
-        }
-        
-        }
+                        }
+                    }
+                }
             
-    }
+        .navigationTitle("Sandwiches")
+            
+                }
+        
+            }
+            
+        }
     
 
 struct ContentView_Previews: PreviewProvider {
