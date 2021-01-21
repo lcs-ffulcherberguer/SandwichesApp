@@ -28,10 +28,16 @@ struct SandwichDetail: View {
             
             Spacer(minLength: 0)
             
-            Label("Spicy", systemImage: "flame.fill")
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            HStack {
+                Spacer()
+                Label("Spicy", systemImage: "flame.fill")
+                Spacer()
+                    
+            }
             
+            .padding(.all)
+            .font(.headline)
+            .background(Color.red)
             
         }
         
