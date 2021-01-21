@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct SandwichDetail: View {
+    var sandwich: Sandwich
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(sandwich.imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
 struct SandwichDetail_Previews: PreviewProvider {
     static var previews: some View {
-        SandwichDetail()
+        SandwichDetail(sandwich: testData[0])
     }
 }
