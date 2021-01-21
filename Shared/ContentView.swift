@@ -16,9 +16,12 @@ struct ContentView: View {
                 ForEach(store.sandwiches) { sandwich in
                SandwichCell(sandwich: sandwich)
                 
-                
                }
              
+                .onMove(perform: moveSandwich)
+                .onDelete(perform: deleteSandwiches)
+                
+                
                 HStack {
                     //Make it centered
                     Spacer()
@@ -38,8 +41,26 @@ struct ContentView: View {
                 }
         
             }
-            
+    
+    func makeSandwich() {
+        withAnimation {
+            store.sandwiches.append(Sandwich(name: "Patty melt", ingredientCount: 3))
         }
+    }
+    
+    func moveSandwich(from: IndexSet, to: Int) {
+        withAnimation {
+            store.sandwiches.move(fromOffsets: from, toOffset: to)
+        }
+    }
+    
+    func deleteSandwiches(offsets: IndexSet) {
+        withAnimation {
+            store.sandwiches.remove(atOffsets: offsets)
+        }
+    }
+            
+}
     
 
 struct ContentView_Previews: PreviewProvider {
